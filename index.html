@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <script src="https://kit.fontawesome.com/7bad2979bc.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Roboto+Slab:wght@900&display=swap"
+    rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    html {
+      overflow-x: hidden;
+    }
+
+    body {
+      color: black;
+      background-color: rgb(53, 170, 170);
+    }
+
+    .nav {
+      height: 50px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: #ffff;
+      font-size: 30px;
+    }
+
+    i {
+      color: #ffff;
+    }
+
+    .links {
+      border-radius: 30px;
+      display: flex;
+      margin-right: 30px;
+      text-decoration: none;
+      list-style: none;
+      height: 100vh;
+    }
+
+    .links a {
+      color: #ffff;
+      text-decoration: none;
+    }
+
+    .links li {
+      padding-top: 8px;
+      text-transform: uppercase;
+      font-size: 20px;
+      padding-left: 10px;
+    }
+
+    #open {
+      display: none;
+    }
+
+    #close {
+      display: none;
+    }
+
+    .container {
+      box-shadow: 1px 10px rgba(32, 28, 28, 0.623);
+      padding: 0;
+      /* margin-left: 13px;
+      margin-bottom: 13px; */
+      background-color: rgba(0, 255, 255, 0.397);
+    }
+
+    img {
+      margin-top: 4px;
+      border-radius: 13px;
+      border: solid black;
+      width: 200px;
+      height: 150px;
+    }
+
+    .cont2 {
+      margin-left: 50px;
+    }
+
+    .cont2 .row div {
+      border: 1px solid;
+      box-shadow: 5px 10px rgba(26, 14, 14, 0.63);
+      text-align: center;
+    }
+
+    .cont2 .row div p {
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .pic {
+      background-color: black;
+    }
+
+    .row>div {
+      text-align: center;
+      background-color: rgba(240, 255, 255, 0.705);
+      margin: 10px 0px 3px 40px;
+      border-radius: 8px;
+    }
+
+    .row>div a {
+      text-decoration: none;
+    }
+
+    h3 {
+      font-family: 'Roboto Slab', serif;
+      color: rgb(240, 240, 240);
+      text-shadow: 3px 4px rgba(122, 41, 41, 0.685);
+      font-weight: bolder;
+    }
+
+    /* .cont3{
+  margin-left: 90px;
+  text-align: center;
+  align-items: center;
+} */
+    .cont3 .row>div {
+      border-radius: 0;
+      margin: 20px 0px 0px;
+    }
+
+    #down,
+    #down1 {
+      color: black;
+      display: none;
+      font-size: 30px;
+    }
+
+    #left,
+    #left1 {
+      color: black;
+      font-size: 30px;
+    }
+
+    .cont3 .row .col-md-3 {
+      border: rgba(206, 202, 202, 0.733) solid;
+      text-align: left;
+    }
+
+    .cont3 .row .col-md-3 p {
+      text-align: center;
+    }
+
+    .cont3 .row .col-md-3 h6 {
+      font-family: 'Roboto Slab', serif;
+      color: black;
+    }
+
+    #cp {
+      top: 100%;
+      left: 50%;
+    }
+
+    .cont4 {
+      margin-top: 13px;
+    }
+
+    .cont4 .row>div {
+      margin: 0;
+      border-radius: 0;
+    }
+
+    .fp {
+      margin-top: 16px;
+    }
+
+    .fp>div {
+      padding-top: 12px;
+      background-color: rgba(240, 240, 240, 0.644);
+
+    }
+
+    .fp .col-md-3 {
+      text-align: left;
+      border: rgba(206, 202, 202, 0.733) solid;
+    }
+
+    .col-md-3 h6 {
+      font-family: 'Roboto Slab', serif;
+      padding-left: 12px;
+    }
+
+    .fp .col-md-3 p {
+      text-align: center;
+    }
+
+    form {
+      align-items: center;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    input {
+      border-radius: 8px;
+      margin-top: 5px;
+      width: 40%;
+    }
+
+    .cnt5 p {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 25px;
+    }
+
+    .cnt5 .row .col-12 {
+      text-align: center;
+    }
+
+    button {
+      /* background-color: salmon;
+  border-radius: 12px;
+  margin-left: 20%; */
+      margin-top: 5px;
+      width: 40%;
+      margin-bottom: 30px;
+    }
+
+    .cnt5>div {
+      margin: 0;
+      padding: 0;
+    }
+
+    .cnt5 {
+      margin-left: 20px;
+    }
+
+    form :nth-last-child(2) {
+      height: 80px;
+    }
+
+    h2 {
+      font-family: 'Roboto Slab', serif;
+    }
+    
+    .last-section {
+      padding-top: 20px;
+      margin-top: 20px;
+      background-color: rgba(0, 0, 0, 0.76);
+      text-align: center;
+    }
+    .last-section i {
+      padding-left: 80px;
+      text-align: center;
+      font-size: 50px;
+    }
+    @media (max-width: 700px) {
+
+      .last-section i {
+        padding-top: 0px;
+      padding-left: 20px;
+      text-align: center;
+      font-size: 20px;
+    }
+
+
+      .cnt5 p {
+        font-size: 15px;
+      }
+
+      .last-section .row {
+        margin-left: 0px;
+      }
+
+      .last-section {
+        margin-left: 0px;
+      }
+
+      .last-section i {
+        font-size: 30px;
+      }
+
+      input {
+        border-radius: 8px;
+        margin-top: 5px;
+        width: 100%;
+      }
+
+      .cont3 {
+        margin: 0;
+      }
+
+      #open {
+        display: block;
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      .container {
+        box-shadow: 1px 10px rgba(32, 28, 28, 0.623);
+        padding: 0;
+        margin: 0;
+      }
+
+      .links li {
+        padding-right: 300px;
+        padding-top: 10px;
+      }
+
+      .cont2 {
+        margin: 0;
+      }
+
+      .links {
+        text-align: center;
+        top: 6%;
+        position: fixed;
+        flex-direction: column;
+        z-index: 2;
+        transform: translateX(139px);
+        /* background-color: rgb(55, 120, 177); */
+      }
+      .row>div {
+        margin: 1px 0px;
+      }
+
+      body {
+        background-color: rgb(48, 105, 148);
+      }
+
+      .cont2 .row div {
+        margin-top: 10px;
+      }
+
+      #open {
+        top: 0;
+        font-size: 30px;
+        right: 5%;
+        position: absolute;
+      }
+     .links li {
+      font-size: 15px;
+     }
+      #close {
+        top: 0;
+        font-size: 25px;
+        right: 7%;
+        position: absolute;
+      }
+    }
+  </style>
+
+  <title>EDUCTION SYSTEM</title>
+</head>
+
+<body>
+  <div class="nav" id="home">
+    <div class="logo">
+      <h3>MZEE EDUCTION<sup>TM</sup></h3>
+    </div>
+    <div>
+      <div id="open"><i class="fa-solid fa-bars"></i></div>
+      <div id="close"><i class="fa-solid fa-xmark"></i></div>
+      <ul class="links" id="links">
+        <a href="#home">
+          <li>Home</li>
+        </a>
+        <a href="#completed-projects">
+          <li>Completed Projects</li>
+        </a>
+        <a href="#media">
+          <li>Contact</li>
+        </a>
+        <a href="#future-projects">
+          <li>Future Projects</li>
+        </a>
+        <a href="#suggestions">
+          <li>Suggestions</li>
+        </a>
+        <a href="#visits">
+          <li>VISITS</li>
+        </a>
+      </ul>
+    </div>
+  </div>
+
+<div id="html">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <h6> On going projects</h6>
+        <a href="#">School Systems</a><br>
+        <a href="#">University Life</a><br>
+        <a href="#">Pakistan and Corruption</a><br>
+        <a href="#">How JavaScript Works</a><br>
+      </div>
+      <div class="col-md-4">
+        <h6>Completed Objects</h6>
+        <a href="#">How HTML Works</a><br>
+        <a href="#">CSS and HTML Connection</a><br>
+        <a href="#">CSS Properties</a><br>
+        <a href="#">Extra Information About CSS</a><br>
+        <a href="#">How to add CSS to HTML</a><br>
+        <a href="#">Pratice</a>
+      </div>
+      <div class="col-md-3">
+        <h6>Future Plans</h6>
+        <a href="#">How Back End works</a><br>
+        <a href="#">How to color Body</a><br>
+        <a href="#">How to get a job</a><br>
+        <a href="#" id="last">How to add innerText using JavaScript</a><br>
+      </div>
+    </div>
+  </div>
+
+  <div class="cont2">
+    <div class="row">
+      <div class="col-md-10">
+        <h5>OUR PHYSICAL VISTS</h5>
+      </div>
+      <div id="visits" class="col-md-3">
+        <img src="s.png">
+        <p>During a visit at International Islamic University Islamabad</p>
+      </div>
+      <div class="col-md-3">
+        <img src="download.jpg">
+        <p>During a visit Eduction and Knowledge</p>
+      </div>
+      <div class="col-md-3">
+        <img src="child.jpg">
+        <p>During a visit at National School system</p>
+      </div>
+      <div class="col-md-3">
+        <img src="second.png">
+        <p>During a visit at School system Pakistan</p>
+      </div>
+      <div class="col-md-3">
+        <img src="grl.jpg">
+        <p>During a visit Of Government school</p>
+      </div>
+      <div class="col-md-3">
+        <img src="spirit.jpg">
+        <p>During a visit at International Islamic University</p>
+      </div>
+      <div class="col-md-3">
+        <img src="s.png">
+        <p>During a visit at International Islamic University</p>
+      </div>
+      <div class="col-md-3">
+        <img src="next.jpg">
+        <p>During a visit at International Islamic University</p>
+      </div>
+      <div class="col-md-3">
+        <img src="second.png">
+        <p>During a visit at School system Pakistan</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cont3">
+    <div class="row">
+      <div class="col-9">
+        <h4>COMPLETED PROJECTS</h4>
+      </div>
+      <div class="col-3">
+        <i class="fa-solid fa-arrow-left" id="left"></i>
+        <i class="fa-solid fa-arrow-down" id="down"></i>
+      </div>
+      <div id="cp">
+        <div class="row">
+          <div class="col-md-3">
+            <h6 id="completed-projects"><u>Extra Information About CSS</u></h6>
+            <p>Colorín Colorado is a national multimedia project that offers a wealth of bilingual, research-based
+              information, activities, and advice for educators and families of English language learners (ELLs).
+              Colorín Colorado is an educational service of WETA, the flagship public broadcasting station in the
+              nation's capital, and receives major funding from the American Federation of Teachers and National
+              Education Association. © Copyright 2019 WETA Public Broadcasting.
+
+              Artwork by Caldecott Award-winning illustrator David Diaz and Pura Belpr­é Award-winning illustrator
+              Rafael López is used with permission. Homepage illustrations ©2009 by Rafael López originally appeared in
+              "Book Fiesta" by Pat Mora and used with permission from HarperCollins.</p>
+          </div>
+          <div class="col-md-3">
+            <h6><u>CSS Properties</u></h6>
+            <p> Colorín Colorado is a national multimedia project that offers a wealth of bilingual, research-based
+              information, activities, and advice for educators and families of English language learners (ELLs).
+              Colorín Colorado is an educational service </br>of WETA, the flagship public broadcasting station in the
+              nation's capital, and receives major funding from the American Federation of Teachers and National
+              Education Association. © Copyright 2019 WETA Public Broadcasting.
+
+              Artwork by Caldecott Award-winning illustrator David Diaz and Pura Belpr­é Award-winning illustrator
+              Rafael López is used with permission. Homepage illustrations ©2009 by Rafael López originally appeared in
+              "Book Fiesta" by Pat Mora and used with permission from HarperCollins.
+          </div>
+          <div class="col-md-3">
+            <h6><u>CSS and HTML Connection</u></h6>
+            <p> Colorín Colorado is a national multimedia project that offers a wealth of bilingual, research-based
+              information, activities, and advice for educators and families of English language learners (ELLs).
+              Colorín Colorado is an educational service of WETA, the flagship public broadcasting station in the
+              nation's capital, and receives major funding from the American Federation of Teachers and National
+              Education Association. © Copyright 2019 WETA Public Broadcasting.
+
+              Artwork by Caldecott Award-winning illustrator David Diaz and Pura Belpr­é Award-winning illustrator
+              Rafael López is used with permission. Homepage illustrations ©2009 by Rafael López originally appeared in
+              "Book Fiesta" by Pat Mora and used with permission from HarperCollins.
+          </div>
+          <div class="col-md-3">
+            <h6><u>How to add CSS to HTML</u></h6>
+            <p> Colorín Colorado is a national multimedia project that offers a wealth of bilingual, research-based
+              information, activities, and advice for educators and families of English language learners (ELLs).
+              Colorín Colorado is an educational service of WETA, the flagship public broadcasting station in the
+              nation's capital, and receives major funding from the American Federation of Teachers and National
+              Education Association. © Copyright 2019 WETA Public Broadcasting.
+
+              Artwork by Caldecott Award-winning illustrator David Diaz and Pura Belpr­é Award-winning illustrator
+              Rafael López is used with permission. Homepage illustrations ©2009 by Rafael López originally appeared in
+              "Book Fiesta" by Pat Mora and used with permission from HarperCollins.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="cont4" id="cont4">
+    <div class="row">
+      <div class="col-9">
+        <h4>FUTURE PROJECTS</h4>
+      </div>
+      <div class="col-3">
+        <i class="fa-solid fa-arrow-left" id="left1"></i>
+        <i class="fa-solid fa-arrow-down" id="down1"></i>
+      </div>
+    </div>
+    <div class="fp" id="fp">
+      <div class="row">
+        <div class="col-md-3">
+          <h6 id="future-projects"><u>University Life</u></h6>
+          <p>Do you know how to talk about future plans using will, going to and the present continuous?
+
+            Look at these examples to see how will, going to and the present continuous are used.
+
+            Oh great! That meeting after work's been cancelled. I'll go to that yoga class instead.
+            I'm going to try to visit my relatives in Australia this year.
+            The restaurant is reserved for 8. We're having a drink at Beale's first.</p>
+        </div>
+        <div class="col-md-3">
+          <h6><u>New Government In Pakistan</u></h6>
+          <p>Do you know how to talk about future plans using will, going to and the present continuous?
+
+            Look at these examples to see how will, going to and the present continuous are used.
+
+            Oh great! That meeting after work's been cancelled. I'll go to that yoga class instead.
+            I'm going to try to visit my relatives in Australia this year.
+            The restaurant is reserved for 8. We're having a drink at Beale's first.</p>
+        </div>
+        <div class="col-md-3">
+          <h6><u>Future Plans for studies</u></h6>
+          <p>Do you know how to talk about future plans using will, going to and the present continuous?
+
+            Look at these examples to see how will, going to and the present continuous are used.
+
+            Oh great! That meeting after work's been cancelled. I'll go to that yoga class instead.
+            I'm going to try to visit my relatives in Australia this year.
+            The restaurant is reserved for 8. We're having a drink at Beale's first.</p>
+        </div>
+        <div class="col-md-3">
+          <h6><u>Font End Web Development</u></h6>
+          <p>Do you know how to talk about future plans using will, going to and the present continuous?
+
+            Look at these examples to see how will, going to and the present continuous are used.
+
+            Oh great! That meeting after work's been cancelled. I'll go to that yoga class instead.
+            I'm going to try to visit my relatives in Australia this year.
+            The restaurant is reserved for 8. We're having a drink at Beale's first.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cnt5">
+    <div class="row">
+      <div class="col-10">
+        <h2 id="suggestions">Suggestions</h2></br>
+        <p>Please Post you kind Suggestions here in this area, Also you can send us an Email so we can contact you in
+          future for help, Thanks.
+        </p>
+      </div>
+      <div class="col-10">
+        <form onsubmit="submit(submit);"> 
+          <input type="Name" placeholder="Enter your name...">
+          <input type="Email" placeholder="Enter yur Email...">
+          <input type="text" placeholder="Your kind suggestion here">
+          <button>Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="last-section" id="media">
+    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+    <a href=""><i class="fa-brands fa-discord"></i></a>
+    <a href=""><i class="fa-brands fa-facebook"></i></a>
+    <a href=""><i class="fa-brands fa-github"></i></a>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    const close = document.getElementById('close')
+    const open = document.getElementById('open')
+    const links = document.getElementById('links')
+    const left = document.getElementById('left')
+    const down = document.getElementById('down');
+    const completedprojects = document.getElementById('cp')
+    const futureprojects = document.getElementById('fp')
+    const left1 = document.getElementById('left1')
+    const down1 = document.getElementById('down1')
+  const htmls = document.getElementById('html');
+    open.addEventListener("click", () => {
+      links.style.transform = "translateX(-150px)"
+      links.style.transition = "1s"
+      open.style.display = "none"
+      close.style.display = "block"
+    })
+    close.addEventListener("click", () => {
+      links.style.transform = "translateX(150px)"
+      links.style.transition = "1s";
+      open.style.display = "block";
+      close.style.display = "none";
+    })
+    left.addEventListener("click", () => {
+      down.style.display = "block";
+      left.style.display = "none";
+      completedprojects.style.display = "none";
+    })
+    down.addEventListener("click", () => {
+      left.style.display = "block";
+      down.style.display = "none";
+      completedprojects.style.display = "block"
+    })
+    left1.addEventListener("click", () => {
+      down1.style.display = "block"
+      left1.style.display = "none"
+      futureprojects.style.display = "none";
+    })
+    down1.addEventListener("click", () => {
+      left1.style.display = "block"
+      down1.style.display = "none"
+      futureprojects.style.display = "block";
+    })
+    htmls.addEventListener("click", () =>{
+      links.style.transform = "translateX(150px)"
+      open.style.display = "block";
+      close.style.display = "none";
+    })
+    function submit(){
+      console.log("send")
+    }
+  </script>
+</body>
+
+</html>
